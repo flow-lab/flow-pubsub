@@ -2,17 +2,15 @@
 
 PubSub emulator to use with _Kubernetes_ for local development. 
 
-Check [minikube.yml](./minikube.yml) for example configuration.
+Check [minikube.yml](./minikube.yml) for example configuration and [Makefile](./Makefile) for all important stuff.
 
-Check Makefile for all important stuff.
-
-### GitHub Actions
+## GitHub Actions
 
 Project is using GitHub Actions for deployment. Workflows are located in [./github/workflows](./github/workflows), where:
 
 - docker-release.yml - builds and deploys to DockerHub repository
 
-### Secrets
+## Secrets
 
 Projects requires secrets for GitHub Actions. Secrets should be located in GitHub project secrets.
 
