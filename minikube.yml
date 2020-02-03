@@ -1,0 +1,28 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flow-pubsub
+  labels:
+    app: flow-pubsub
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flow-pubsub
+  template:
+    metadata:
+      labels:
+        app: flow-pubsub
+    spec:
+      volumes:
+        - name: db-sql-volume
+          configMap:
+            name: db-sql
+      containers:
+        - name: flow-pubsub
+          image: flowlab/flow-pubsub:latest
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: PROJECT_ID
+              value: "diatom"
