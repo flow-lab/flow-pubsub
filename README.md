@@ -17,6 +17,10 @@ Project is using GitHub Actions for deployment. Workflows are located in [./gith
 Projects requires secrets for GitHub Actions. Secrets should be located in GitHub project secrets.
 
 - DOCKERHUB_TOKEN - DockerHub access token
+
+## DockerHub
+
+[https://hub.docker.com/repository/docker/flowlab/flow-pubsub](https://hub.docker.com/repository/docker/flowlab/flow-pubsub)
  
 ## Credits
 
