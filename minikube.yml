@@ -2,20 +2,61 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flow-pubsub
+  name: pubsub-deployment
   labels:
-    app: flow-pubsub
+    app: pubsub
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: flow-pubsub
+      app: pubsub
   template:
     metadata:
       labels:
-        app: flow-pubsub
+        app: pubsub
     spec:
       containers:
         - name: flow-pubsub
           image: flowlab/flow-pubsub:latest
           imagePullPolicy: IfNotPresent
+          args: ["--host-port=0.0.0.0:8538", "--project=diatom"]
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pubsub
+spec:
+  ports:
+    - port: 8538
+  selector:
+    app: pubsub
+#
+#---
+#apiVersion: apps/v1
+#kind: Deployment
+#metadata:
+#  name: app
+#  labels:
+#    app: app
+#spec:
+#  replicas: 1
+#  selector:
+#    matchLabels:
+#      app: app
+#  template:
+#    metadata:
+#      labels:
+#        app: app
+#    spec:
+#      containers:
+#        - name: app
+#          image: flowlab/app:latest
+#          imagePullPolicy: Never
+#          ports:
+#            - containerPort: 8080
+#          env:
+#            - name: PUBSUB_EMULATOR_HOST
+#              value: pubsub:8432
+#            - name: PUBSUB_PROJECT_ID
+#              value: diatom-ai
