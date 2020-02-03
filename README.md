@@ -1,4 +1,4 @@
-# Flow k8 sql ![Build and Publish](https://github.com/flow-lab/flow-pubsub/workflows/Build%20and%20Publish/badge.svg?branch=master)
+# Flow PubSub Emulator ![Build and Publish](https://github.com/flow-lab/flow-pubsub/workflows/Build%20and%20Publish/badge.svg?branch=master)
 
 PubSub emulator to use with _Kubernetes_ for local development. 
 
