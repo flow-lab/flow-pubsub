@@ -57,6 +57,6 @@ spec:
 #            - containerPort: 8080
 #          env:
 #            - name: PUBSUB_EMULATOR_HOST
-#              value: pubsub:8432
+#              value: pubsub:8538
 #            - name: PUBSUB_PROJECT_ID
 #              value: diatom-ai
