@@ -15,10 +15,6 @@ spec:
       labels:
         app: flow-pubsub
     spec:
-      volumes:
-        - name: db-sql-volume
-          configMap:
-            name: db-sql
       containers:
         - name: flow-pubsub
           image: flowlab/flow-pubsub:latest
