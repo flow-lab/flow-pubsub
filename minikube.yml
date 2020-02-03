@@ -23,6 +23,3 @@ spec:
         - name: flow-pubsub
           image: flowlab/flow-pubsub:latest
           imagePullPolicy: IfNotPresent
-          env:
-            - name: PROJECT_ID
-              value: "diatom"
