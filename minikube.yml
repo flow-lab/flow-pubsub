@@ -19,7 +19,7 @@ spec:
         - name: flow-pubsub
           image: flowlab/flow-pubsub:latest
           imagePullPolicy: IfNotPresent
-          args: ["--host-port=0.0.0.0:8538", "--project=diatom"]
+          args: ["--host-port=0.0.0.0:8538", "--project=diatom-ai"]
 
 ---
 apiVersion: v1
