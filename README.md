@@ -24,13 +24,9 @@ Projects requires secrets for GitHub Actions. Secrets should be located in GitHu
 
 Use [Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/).
 
-1. Start minikube running 
+1. Start minikube running: `minikube start`
 
-    `minikube start`
-
-2. Initialize Minikube with local docker process: 
-
-    `eval $(minikube docker-env)`
+2. Initialize Minikube with local docker process: `eval $(minikube docker-env)`
 
 3. Apply minikube configuration
 
@@ -49,9 +45,7 @@ Use [Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/).
     export PUBSUB_EMULATOR_HOST=${HOST#"http://"}
     ```
 
-5. Export project id
-
-    `export PUBSUB_PROJECT_ID="your-project-id"`
+5. Export project id: `export PUBSUB_PROJECT_ID="your-project-id"`
 
 Next you can fire up `minikube dashboard` and use [flow](https://github.com/flow-lab/flow#pubsub) to create topic, 
 subscriptions and publish messages. For example: `flow pubsub create-topic -t test`
