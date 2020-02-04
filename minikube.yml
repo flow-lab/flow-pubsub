@@ -27,6 +27,7 @@ kind: Service
 metadata:
   name: pubsub
 spec:
+  type: NodePort
   ports:
     - port: 8538
   selector:

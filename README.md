@@ -19,7 +19,43 @@ Projects requires secrets for GitHub Actions. Secrets should be located in GitHu
 ## DockerHub
 
 [https://hub.docker.com/repository/docker/flowlab/flow-pubsub](https://hub.docker.com/repository/docker/flowlab/flow-pubsub)
- 
+
+## Local development/testing
+
+Use [Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/).
+
+1. Start minikube running 
+
+    `minikube start`
+
+2. Initialize Minikube with local docker process: 
+
+    `eval $(minikube docker-env)`
+
+3. Apply minikube configuration
+
+    `kubectl apply -f minikube.yml`
+    
+    output:
+    ```
+    deployment.apps/pubsub-deployment created
+    service/pubsub created
+    ```
+
+4. Get pubsub host url end export as local env without _http://_
+
+    ```
+    HOST=$(minikube service pubsub --url)
+    export PUBSUB_EMULATOR_HOST=${HOST#"http://"}
+    ```
+
+5. Export project id
+
+    `export PUBSUB_PROJECT_ID="your-project-id"`
+
+Next you can fire up `minikube dashboard` and use [flow](https://github.com/flow-lab/flow#pubsub) to create topic, 
+subscriptions and publish messages. For example: `flow pubsub create-topic -t test`
+
 ## Credits
 
 This project was created by cookiecutter https://github.com/flow-lab/ms-template.
