@@ -1,0 +1,8 @@
+services:
+  pubsub:
+    image: flowlab/flow-pubsub:latest
+    ports:
+      - 8538:8538
+    command: ["--host-port=0.0.0.0:8538", "--project=${PUBSUB_PROJECT_ID:-diatom-ai}"]
+    environment:
+      - PUBSUB_PROJECT_ID

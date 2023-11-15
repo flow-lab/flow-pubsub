@@ -1,6 +1,6 @@
 # Flow PubSub Emulator ![Build and Publish](https://github.com/flow-lab/flow-pubsub/workflows/Build%20and%20Publish/badge.svg?branch=master)
 
-PubSub emulator to use with _Kubernetes_ for local development. 
+PubSub emulator to use with _Kubernetes_ or _Docker Compose_ for local development. 
 
 Check [minikube.yml](./minikube.yml) for example configuration and [Makefile](./Makefile) for all important stuff.
 
@@ -22,7 +22,9 @@ Projects requires secrets for GitHub Actions. Secrets should be located in GitHu
 
 ## Local development/testing
 
-Use [Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/).
+### 1. With [docker-compose](./docker-compose.yml)
+
+### 2. With [Minikube](./minikube.yml)
 
 1. Start minikube running: `minikube start`
 
@@ -53,3 +55,7 @@ subscriptions and publish messages. For example: `flow pubsub create-topic -t te
 ## Credits
 
 This project was created by cookiecutter https://github.com/flow-lab/ms-template.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
