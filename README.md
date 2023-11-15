@@ -1,24 +1,13 @@
-# Flow PubSub Emulator ![Build and Publish](https://github.com/flow-lab/flow-pubsub/workflows/Build%20and%20Publish/badge.svg?branch=master)
+# Flow PubSub
 
-PubSub emulator to use with _Kubernetes_ or _Docker Compose_ for local development. 
+Flow PubSub is a versatile and lightweight Google Pub/Sub emulator, designed to streamline local development workflows
+in both Kubernetes and Docker Compose environments. This emulator is an ideal tool for developers seeking to test
+Pub/Sub functionalities without deploying to a live cloud environment.
 
-Check [minikube.yml](./minikube.yml) for example configuration and [Makefile](./Makefile) for all important stuff.
+## Discover on DockerHub
 
-## GitHub Actions
-
-Project is using GitHub Actions for deployment. Workflows are located in [./github/workflows](./.github/workflows), where:
-
-- docker-release.yml - builds and deploys to DockerHub repository
-
-## Secrets
-
-Projects requires secrets for GitHub Actions. Secrets should be located in GitHub project secrets.
-
-- DOCKERHUB_TOKEN - DockerHub access token
-
-## DockerHub
-
-[https://hub.docker.com/repository/docker/flowlab/flow-pubsub](https://hub.docker.com/repository/docker/flowlab/flow-pubsub)
+Explore and download the emulator from our DockerHub
+repository:[https://hub.docker.com/repository/docker/flowlab/flow-pubsub](https://hub.docker.com/repository/docker/flowlab/flow-pubsub)
 
 ## Local development/testing
 
@@ -32,9 +21,9 @@ Projects requires secrets for GitHub Actions. Secrets should be located in GitHu
 
 3. Apply minikube configuration
 
-    `kubectl apply -f minikube.yml`
-    
-    output:
+   `kubectl apply -f minikube.yml`
+
+   output:
     ```
     deployment.apps/pubsub-deployment created
     service/pubsub created
@@ -49,13 +38,10 @@ Projects requires secrets for GitHub Actions. Secrets should be located in GitHu
 
 5. Export project id: `export PUBSUB_PROJECT_ID="your-project-id"`
 
-Next you can fire up `minikube dashboard` and use [flow](https://github.com/flow-lab/flow#pubsub) to create topic, 
+Next you can fire up `minikube dashboard` and use [flow](https://github.com/flow-lab/flow#pubsub) to create topic,
 subscriptions and publish messages. For example: `flow pubsub create-topic -t test`
 
-## Credits
+## Open Source License
 
-This project was created by cookiecutter https://github.com/flow-lab/ms-template.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
+Flow PubSub is open source and available under the MIT License, promoting free and unrestricted use to foster innovation
+and collaboration.
