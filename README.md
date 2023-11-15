@@ -6,7 +6,7 @@ Check [minikube.yml](./minikube.yml) for example configuration and [Makefile](./
 
 ## GitHub Actions
 
-Project is using GitHub Actions for deployment. Workflows are located in [./github/workflows](./github/workflows), where:
+Project is using GitHub Actions for deployment. Workflows are located in [./github/workflows](./.github/workflows), where:
 
 - docker-release.yml - builds and deploys to DockerHub repository
 
