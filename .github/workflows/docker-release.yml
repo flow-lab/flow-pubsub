@@ -24,7 +24,7 @@ jobs:
           VERSION=${{github.ref_name}}
           docker build \
             -t flowlab/"$IMAGE":latest \
-            -t flowlab/"$IMAGE":"$DOCKER_VER" .
+            -t flowlab/"$IMAGE":"$VERSION" .
 
       - name: Setup DockerHub
         run: |
