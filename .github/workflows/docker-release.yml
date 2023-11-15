@@ -7,6 +7,7 @@ on:
 
 env:
   GITHUB_SHA: ${{ github.sha }}
+  IMAGE: flow-pubsub
 
 jobs:
   setup-build-publish:
